@@ -14,7 +14,7 @@ To validate our model, we will compare our results to the Wikipedia’s Pageview
 
 As we start this project, we are concerned that data retrieval may be difficult. Our model depends on the links of wikipedia page articles, which might be fairly difficult to scrape, since the data might not be public. Furthermore, we are worried about how to validate our model. As we are only modeling a small part of the world wide web, it might be difficult to compare our results against Google’s actual PageRank algorithm, as we will have neglected many links in our model. Additionally, scaling our model up would be difficult, as optimizing the processing of large data sets can be challenging.
 
-8) Outline next steps.  For each team member, what do you plan to work on immediately?  For the team, what do you think you can get done in the first week?  Consider using Trello (or a similar tool) to delegate and track tasks.
+For task management, we will use GitHub issue tracker to distribute workload and manage tasks. For the first week, we are expecting to finish implementing a small scale version of core PageRank algorithm. For managing responsibility, although we will be working together for different tasks, we will designate a person in charge for each tasks.
 
 # Bibliography
 
