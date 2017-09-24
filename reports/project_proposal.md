@@ -4,9 +4,9 @@ During our project, we will explore the Google PageRank algorithm by designing a
 
 As we approach this project, we first plan to replicate a small model of Google's PageRank, using a limited number of nodes and edges. PageRank assigns each website a rank, which is then used to help order search results. We will determine this rank by examining the links of going to each page, which give the page a higher rank in proportion to how highly ranked those websites are. 
 
-As we move forward on this project, we could extend it farther. We could model a larger network of pages, which means that would have to account for a large amount of data. 
+As we move forward on this project, we could extend it farther. We could model a larger network of pages, which means that would have to account for a large amount of data. In order to process the large amount of data we can work with the dangling nodes of the model, which are the nodes that have no outwards link, and put them in a separate matrix. Otherwise we can decompose our matrix in order to have two smaller matrices that store the same information through less data. Additionally, we could ignore in our page rank calculations the links that contribute very little. In order to proceed in this direction, we will have to do more research in order to understand our options.
 
-4) Present 1-3 experiments from these papers that you plan to replicate and 1-3 extensions or variations of those experiments you are considering.
+We could also personalize our page ranks, based on the user. If the user has a tendency to use certain websites more than others, we could have that factor into the page rank. We could create a vector E that is a distribution of the web pages that a user periodically goes to, which would affect our page rank. However, this might be difficult to implement as we are only one one small portion of the world wide web.
 
 We will display our results in a graph that changes the size of each node depending on its page rank. That way we will have a clear visualization of which nodes have the highest rank and which ones do not. This will allow us to preliminary check our model to see if the pages with the most backlinks have the highest page ranks.
 
