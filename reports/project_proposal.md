@@ -8,9 +8,9 @@ As we move forward on this project, we could extend it farther. We could model a
 
 4) Present 1-3 experiments from these papers that you plan to replicate and 1-3 extensions or variations of those experiments you are considering.
 
-To validate our model, we will compare our results to the Wikipedia’s Pageviews Analysis, in order to determine whether there is a slight correlation between our PageRank results and the popularity of the Wikipedia pages. However, since we are only modeling a small subset of the Wikipedia pages, there will most likely still be many discrepancies between the two, as we would not have accounted for any links connecting to our nodes that do not come from one of ours model’s nodes. 
+We will display our results in a graph that changes the size of each node depending on its page rank. That way we will have a clear visualization of which nodes have the highest rank and which ones do not. This will allow us to preliminary check our model to see if the pages with the most backlinks have the highest page ranks.
 
-We will display our results in a 
+To validate our model, we will compare our results to the Wikipedia’s Pageviews Analysis, in order to determine whether there is a slight correlation between our PageRank results and the popularity of the Wikipedia pages. However, since we are only modeling a small subset of the Wikipedia pages, there will most likely still be many discrepancies between the two, as we would not have accounted for any links connecting to our nodes that do not come from one of ours model’s nodes. 
 
 As we start this project, we are concerned that data retrieval may be difficult. Our model depends on the links of wikipedia page articles, which might be fairly difficult to scrape, since the data might not be public. Furthermore, we are worried about how to validate our model. As we are only modeling a small part of the world wide web, it might be difficult to compare our results against Google’s actual PageRank algorithm, as we will have neglected many links in our model. Additionally, scaling our model up would be difficult, as optimizing the processing of large data sets can be challenging.
 
