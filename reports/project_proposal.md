@@ -1,4 +1,4 @@
-
+# OutRanked Project Proposal
 
 During our project, we will explore the Google PageRank algorithm by designing a model based on it. Focusing on only a subset of Wikipedia pages, we will make a small-scale model, using wikipedia pages as the nodes, and the links to other pages as the edges. By designing this model, we will be able to understand how the popularity of webpages are affected by their backlinks from other pages. 
 
