@@ -5,8 +5,8 @@ In Page and Brin's paper *The PageRank Citation Ranking: Bringing Order to the W
 
 ## Verifying PageRank
 In order to determine whether PageRank would accurately calculate the websites that the viewer is most interested in, we decided to compare it against a metric for determining the centrality of nodes in a graph based on shortest path lengths, known as betweenness centrality. We assumed that if there was a high correlation between the page rank probability distribution of a node and the betweenness centrality of the same node, then the page rank algorithm would be an accurate way of determining which websites are most popular. Figure 1 depicts each node with its corresponding page rank probability and betweeness centrality for a Barabasi-Albert graph. A Barabasi-Albert has central nodes with many edges, so we expected to see a linear correlation between the two over a large range of values. As shown in Figure 1, there is a high correlation between the page rank probability of each node and the betweenness centrality. However, there are also a large number of values that do not follow the correlation, having different values of page rank probability for a betweenness centrality of 0. Our hypothesis for this behavior is that the there might be some nodes with many edges, but  do not affect another node's shortest path because there is another node with the similar edges. Despite this anomaly, we still believe that the page rank algorithm would be a good metric to determine which websites should be shown first, since there is a strong correlation between page rank probability and centrality. 
-![ba comparison](code/ba.png)
-![er comparison](code/er.png)
+![ba comparison][code/ba.png]
+![er comparison][code/er.png]
 
 ## Determining Highest Rank
 Since we verified that the page rank algorithm worked, we calulated the page rank of a network of general relativity in order to determine which websites in the network had the highest probability of being chosen, and thus which ones would show up earlier in a google search. Table 1 shows the list of nodes with the highest page rank probability.
