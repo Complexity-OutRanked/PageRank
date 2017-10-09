@@ -33,4 +33,9 @@ This paper reviews mathematics behind the PageRank algorithm. The paper introduc
 
 This paper talks about further details on PageRank algorithm. First two sections talk about the background on PageRank, and the third section explains the general concept of the algorithm. Then, in section 4, it introduces storage issues on PageRank algorithm and explains different approaches on how to resolve the storage issue. In section 5, the paper gives detailed mathematics on solving the PageRank problem. After that, it gives some intuitions about the alpha value and personalization vector and etc… Overall, this paper goes quite deep into the algorithm and gives more perspective on the PageRank algorithm.
 
-#### Bibliography %
+#### Bibliography 5
+[A Faster Algorithm for Betweenness Centrality](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.11.2024&rep=rep1&type=pdf)
+
+*Ulrik Brandes*
+
+Brandes explores 
