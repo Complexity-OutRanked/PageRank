@@ -8,7 +8,7 @@ In order to determine whether PageRank would accurately calculate the websites t
 
 
 ![][https://github.com/Complexity-OutRanked/PageRank/blob/master/code/er.png]
-![][code/er.png]
+![](code/er.png)
 
 ## Determining Highest Rank
 Since we verified that the page rank algorithm worked, we calulated the page rank of collaboration network of general relativity in order to determine which websites in the network had the highest probability of being chosen, and thus which ones would show up earlier in a google search. Table 1 shows the list of nodes with the highest page rank probability.
