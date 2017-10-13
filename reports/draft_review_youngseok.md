@@ -1,12 +1,12 @@
 
 #### Question:  What is your understanding of the experiment the team is replicating?  What question does it answer?  How clear is the team's explanation?
-- I think the team is replicating the experiments from the paper “Why your friends have more friends than you do”, but with different methods of choosing the nodes or edges. I believe this different methodologies yield slightly different outcomes, discussed in class. I think it tries to answer “How does randomly choosing a neighbor edge usually gives higher degree of friends”. However, I think this core question part is somewhat omitted. I think the draft content is more towards the methodology.
+I think the team is replicating the experiments from the paper “Why your friends have more friends than you do”, but with different methods of choosing the nodes or edges. I believe this different methodologies yield slightly different outcomes, discussed in class. I think it tries to answer “How does randomly choosing a neighbor edge usually gives higher degree of friends”. However, I think this core question part is somewhat omitted. I think the draft content is more towards the methodology.
 
 #### Methodology: Do you understand the methodology?  Does it make sense for the question?  Are there limitations you see that the team did not address?
-* I think methodology part is quite clear. However, I think either I misunderstood the question part or the methodologies are trying to answer a different question. 
+I think methodology part is quite clear. However, I think either I misunderstood the question part or the methodologies are trying to answer a different question. 
 
 #### Results: Do you understand what the results are (not yet considering their interpretation)?  If they are presented graphically, are the visualizations effective?  Do all figures have labels on the axes and captions?
-* Yes, the figures are quite clear to understand thanks to the labels and titles. The figures do have all the labels on the axes and captions on the top.
+Yes, the figures are quite clear to understand thanks to the labels and titles. The figures do have all the labels on the axes and captions on the top.
 
 #### Interpretation: Does the draft report interpret the results as an answer to the motivating question?  Does the argument hold water?
 I think interpretation part is somewhat weak. There are many experiments and results but I am not  sure where these results lead to.
