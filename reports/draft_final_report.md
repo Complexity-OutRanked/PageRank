@@ -25,7 +25,7 @@ Mathematically, centrality is defined as
 
 <img src="/figures/BetweennessEquation.png" width="300" height="100" />
 
-where $\sigma_st$ is the total number of shortest paths from node s to node t and $\sigma_st(v)$ is the number of those paths that pass through v.
+where ![sigma_st](/figures/sigma_st.png "sigma st") is the total number of shortest paths from node s to node t and ![sigma_st](/figures/sigma_st(v).png "sigma st") is the number of those paths that pass through v.
 
 For the experiments, we assume that if there is a high correlation between the betweenness value and the PageRank probability of each node, we would conclude that the algorithm worked accurately to evaluate each node. Figure 1 and 2 shows the correlation between betweenness value and the PageRank probability on Barabási–Albert graph and Erdős–Rényi graph, respectively. 
 
@@ -40,12 +40,16 @@ A Barabasi-Albert has central nodes with many edges, so we expect to see a corre
 
 ## Determining Highest Rank
 
-Also Figure 3 shows the correlation for *Wikispeedia navigation paths* graph from SNAP. “Wikispeedia” dataset is a search path where users are asked to navigate from a given source article to a target article, by only clicking Wikipedia links. We thought this task is relevant because it involves search through links. 
+Figure 3 shows the correlation for *Wikispeedia navigation paths* graph from SNAP. “Wikispeedia” dataset is a search path where users are asked to navigate from a given source article to a target article, by only clicking Wikipedia links. We thought this task is relevant because it involves search through links. 
 
 
 Since we verified that the page rank algorithm worked, we calculated the page rank of collaboration network in order to determine which websites in the network had the highest probability of being chosen, and thus which ones would show up earlier in a google search. The third shows the graph of the collaboration network comparing the betweenness and the page rank probability. Unlike the other two figures, there is a smaller correlation between the probability output from page rank and the betweenness centrality. We have determined that this is most likely caused by a variety of nodes in the network that have a large range of edges but do not act as a central hub, diminishing their betweenness centrality while increasing their page rank. The PageRank algorithm is able to account for the nodes with many edges that are not part of the shortest path for many nodes. 
 
-![Figure 3](/figures/CollaborationNetwork.png "Figure 3")
+![Figure 3](/figures/Wikispeedia.png "Figure 3")
+###### Figure 3: Comparing PageRank and Betweenness Centrality for Wikispeedia dataset
+
+![Figure 4](/figures/CollaborationNetwork.png "Figure 4")
+###### Figure 4: Comparing PageRank and Betweenness Centrality for Collaboration network
 
 ## Comparing Search Engines
 Although search engine algorithms are much more complex now, in the beginning the most basic search algorithms matched up a user's web search with pages with the highest word frequency. JumpStation, an early search engine algorithm, indexed through the website titles and listed the web pages with the most common words. On a smaller scale, we compare our word frequency algorithm with or without the page rank algorithm. Our implementation of the word frequency algorithm consists of finding the hundred top articles from our database that have the searched word the most. We create a new graph with only these websites and use Page Rank to determine the top ten web pages. We compare the results from the word frequency algorithm with and without the PageRank algorithm in Table 3. Table 3 shows the top three Wikipedia pages for each algorithm.
