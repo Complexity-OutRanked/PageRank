@@ -10,11 +10,11 @@ PageRank is an algorithm developed by Sergey Brin and Larry Page that is used by
 Following *Google’s PageRank: The Math Behind the Search Engine*, we implement Google's Page Rank algorithm. We verify that our replication is aligned with the paper's by using the data from the paper and checking that our results match the paper's results. Table 1 shows the results of the paper, and Table 2 shows our own results. Since the results are identical, we believe that our page rank algorithm matches the paper's.
 
 ![Figure 1](/figures/paperResult.png "Figure 1")
-<center> Table 1: Results from *Google’s PageRank: The Math Behind the Search Engine* </center>
+<p style="text-align: center;">Table 1: Results from *Google’s PageRank: The Math Behind the Search Engine*</p>
 
 ![Figure 1](/figures/ourResult.png "Figure 1")
 
-<center> Table 2: Results from our own implementation </center>
+<p style="text-align: center;">Table 2: Results from our own implementation </p>
 
 One of the challenges of experimentation with PageRank is how to measure the accuracy of PageRank system. With the probability distribution as an output, it is hard to evaluate the output result since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted. We extend our project to further evaluate the PageRank model by comparing PageRank to betweenness centrality in order to evaluate the probability values of the nodes. 
 
