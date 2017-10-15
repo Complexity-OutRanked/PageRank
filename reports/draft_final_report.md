@@ -15,6 +15,8 @@ In order to determine whether PageRank would accurately calculate the websites t
 ## Determining Highest Rank
 Since we verified that the page rank algorithm worked, we calculated the page rank of collaboration network in order to determine which websites in the network had the highest probability of being chosen, and thus which ones would show up earlier in a google search. The third shows the graph of the collaboration network comparing the betweenness and the page rank probability. Unlike the other two figures, there is a smaller correlation between the probability output from page rank and the betweenness centrality. We have determined that this is most likely caused by a variety of nodes in the network that have a large range of edges but do not act as a central hub, diminishing their betweenness centrality while increasing their page rank. The PageRank algorithm is able to account for the nodes with many edges that are not part of the shortest path for many nodes. 
 
+## Comparing Search Engines
+Although search engine algorithms are much more complex now, in the beginning the most basic search algorithms matched up a user's web search with pages with the highest word frequency. JumpStation, an early search engine algorithm, indexed through the website titles and listed the web pages with the most common words. On a smaller scale, we compare our word frequency algorithm with or without the page rank algorithm. Our implementation of the word frequency algorithm consists of finding the hundred top articles from our database that have the searched word the most. We create a new graph with only these websites and use Page Rank to determine the top ten web pages. We compare the results from the word frequency algorithm with and without the PageRank algorithm in Table 1
 
 ![Figure 3](/figures/CollaborationNetwork.png "Figure 3")
 
@@ -25,6 +27,7 @@ Since we verified that the page rank algorithm worked, we calculated the page ra
 |  Hinduism |  History of Buddhism, United Kingdom, Max Weber |  Hinduism, Religion, Indonesia |
 |  Atheirm |  Atheism, Deity, Eliminative materialism |  Atheism, Thomas Hobbes, Humanism |
 
+Table: Table 1 : Comparing Page Rank and Word Frequency Algorithms
 
 
 ## Bibliography
