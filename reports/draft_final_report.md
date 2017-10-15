@@ -7,30 +7,36 @@ In Page and Brin's paper *The PageRank Citation Ranking: Bringing Order to the W
 PageRank is an algorithm developed by Sergey Brin and Larry Page that is used by early Google Search to rank websites in their search engine results. Unlike other algorithms at that time, it does not use any content information other than the links. It uses the link information to construct a graph of websites, and determines the probability distribution of a user landing on each webpage.
 
 ## Verifying PageRank
-Following *Google’s PageRank: The Math Behind the Search Engine*, we implement Google's Page Rank algorithm. We verify that our replication is aligned with the paper's by using the data from the paper and checking that our results match the paper's results. Table 1 shows the results of the paper, and Table 2 shows our own results. Since the results are very similar, we believe that our page rank algorithm matches the paper's.
+Following *Google’s PageRank: The Math Behind the Search Engine*, we implement Google's Page Rank algorithm. We verify that our replication is aligned with the paper's by using the data from the paper and checking that our results match the paper's results. Table 1 shows the results of the paper, and Table 2 shows our own results. Since the results are identical, we believe that our page rank algorithm matches the paper's.
 
-![Figure 1](/figures/paperResult.png "Figure 1")
-Table 1: Results from *Google’s PageRank: The Math Behind the Search Engine*
-![Figure 1](/figures/ourResult.png "Figure 1")
-Table 2: Results from our own implementation
 
-One of the challenges of experimentation with PageRank is how to measure the accuracy of PageRank system. With the probability distribution as an output, it is hard to evaluate the output result since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted. We extend our project to further evaluate the PageRank model by comparing PageRank to betweenness centrality in order to evaluate the probability values of the nodes. 
+![Table 1](/figures/paperResult.png "Table 1")
+###### Table 1 : Results from *Google’s PageRank: The Math Behind the Search Engine*
+
+![Table 2](/figures/ourResult.png "Table 2")
+###### Table 2 : Results from our own implementation
+
+One of the challenges of experimentation with PageRank is determining how to measure the accuracy of PageRank system. With the probability distribution as an output, it is hard to evaluate the output result since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted. We extend our project to further evaluate the PageRank model by comparing PageRank to betweenness centrality in order to evaluate the probability values of the nodes. 
 
 Betweenness centrality or *betweenness* is a good measure to evaluate the *importance* of nodes. Formally, betweenness is defined as follows,
 > **Betweenness** centrality quantifies the number of times a node acts as a bridge along the shortest path between two other nodes.
 
 Mathematically, centrality is defined as
-[image:1B10D897-33D0-402F-8C0D-FE47F6A6B0AB-48349-000082288B4C0F22/Screen Shot 2017-10-15 at 10.49.01 AM.png]
+
+<img src="/figures/BetweennessEquation.png" width="300" height="100" />
+
 where $\sigma_st$ is the total number of shortest paths from node s to node t and $\sigma_st(v)$ is the number of those paths that pass through v.
 
 For the experiments, we assume that if there is a high correlation between the betweenness value and the PageRank probability of each node, we would conclude that the algorithm worked accurately to evaluate each node. Figure 1 and 2 shows the correlation between betweenness value and the PageRank probability on Barabási–Albert graph and Erdős–Rényi graph, respectively. 
 
 A Barabasi-Albert has central nodes with many edges, so we expect to see a correlation between the two over a large range of values. As shown in Figure 1, there is a high correlation between the page rank probability of each node and the betweenness centrality. As expected, there are less nodes that have a high page rank and betweenness centrality value than nodes that have a low page rank, because Barabasi-Albert graphs have few central nodes. Figure 2 depicts the probability based on the page rank algorithm against the betweenness centrality for an Erdos-Renyi model, which also has a strong correlation. Since an Erdos-Renyi model is a random graph, the correlation would follow a normal distribution, with many nodes having an average betweenness and page rank probability and a few having a low and high page rank probability and betweenness. Since there is a strong correlation between page rank probability and centrality, we believe that 
 
+
 ![Figure 1](/figures/BA1000.png "Figure 1") 
-Figure 1: Comparing PageRank and Betweenness Centrality for BA graph
+###### Figure 1: Comparing PageRank and Betweenness Centrality for BA graph with 1000 nodes and 300 edges
+
 ![Figure 2](/figures/ER1000.png "Figure 2")
-Figure 2: Comparing PageRank and Betweenness Centrality for ER graph
+###### Figure 2: Comparing PageRank and Betweenness Centrality for ER graph with 1000 nodes and p=0.3
 
 ## Determining Highest Rank
 
@@ -42,7 +48,7 @@ Since we verified that the page rank algorithm worked, we calculated the page ra
 ![Figure 3](/figures/CollaborationNetwork.png "Figure 3")
 
 ## Comparing Search Engines
-Although search engine algorithms are much more complex now, in the beginning the most basic search algorithms matched up a user's web search with pages with the highest word frequency. JumpStation, an early search engine algorithm, indexed through the website titles and listed the web pages with the most common words. On a smaller scale, we compare our word frequency algorithm with or without the page rank algorithm. Our implementation of the word frequency algorithm consists of finding the hundred top articles from our database that have the searched word the most. We create a new graph with only these websites and use Page Rank to determine the top ten web pages. We compare the results from the word frequency algorithm with and without the PageRank algorithm in Table 2. Table 2 shows the top three Wikipedia pages for each algorithm.
+Although search engine algorithms are much more complex now, in the beginning the most basic search algorithms matched up a user's web search with pages with the highest word frequency. JumpStation, an early search engine algorithm, indexed through the website titles and listed the web pages with the most common words. On a smaller scale, we compare our word frequency algorithm with or without the page rank algorithm. Our implementation of the word frequency algorithm consists of finding the hundred top articles from our database that have the searched word the most. We create a new graph with only these websites and use Page Rank to determine the top ten web pages. We compare the results from the word frequency algorithm with and without the PageRank algorithm in Table 3. Table 3 shows the top three Wikipedia pages for each algorithm.
 
 
 | Word  | PageRank  | Word Count  | 
@@ -52,9 +58,9 @@ Although search engine algorithms are much more complex now, in the beginning th
 |  Hinduism |  History of Buddhism, United Kingdom, Max Weber |  Hinduism, Religion, Indonesia |
 |  Atheirm |  Atheism, Deity, Eliminative materialism |  Atheism, Thomas Hobbes, Humanism |
 
-                  Table 2: Comparing Page Rank and Word Frequency Algorithms
+###### Table 3: Comparing Page Rank and Word Frequency Algorithms
 
-Table 2 shows that the different algorithms will produce different results, but determining which one is more accurate is difficult, especially since the data is a subset of the wikipedia data and since only one word was inputted for the web search. For most words, the word frequency algorithm without PageRank will rank the Wikipedia page of that word as the first page. However, the PageRank algorithm ranks Wikipedia pages that a user might be interested in, even if the searched word is not exactly the same. 
+Table 3 shows that the different algorithms will produce different results, but determining which one is more accurate is difficult, especially since the data is a subset of the wikipedia data and since only one word was inputted for the web search. For most words, the word frequency algorithm without PageRank will rank the Wikipedia page of that word as the first page. However, the PageRank algorithm ranks Wikipedia pages that a user might be interested in, even if the searched word is not exactly the same. 
 
 One of the reasons that the PageRank algorithm might not work well in this scenario is because of the dataset. Wikipedia is very structured, having webpages dedicated to simply one word, which is why the word frequency algorithm would work very well. Additionally, all of Wikipedia will have reliable information, since it is all part of the same larger web page. For the world wide web as a whole, PageRank will most likely produce more accurate results because it can rank pages based on their popularity, which word frequency neglects. Additionally, most web pages are not centered around a certain word, but rather a certain topic or idea, which makes word frequency more difficult.
  
