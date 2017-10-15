@@ -7,7 +7,7 @@ In Page and Brin's paper *The PageRank Citation Ranking: Bringing Order to the W
 PageRank is an algorithm developed by Sergey Brin and Larry Page that is used by early Google Search to rank websites in their search engine results. Unlike other algorithms at that time, it does not use any content information other than the links. It uses the link information to construct a graph of websites, and determines the probability distribution of a user landing on each webpage.
 
 ## Verifying PageRank
-Following *Google’s PageRank: The Math Behind the Search Engine*, we implement Google's Page Rank algorithm. We verify that our replication is aligned with the paper's by using the data from the paper and checking that our results match the paper's results. Table 1 shows the results of the paper, and Table 2 shows our own results. Since the results are very similar, we believe that our page rank algorithm matches the paper's.
+Following *Google’s PageRank: The Math Behind the Search Engine*, we implement Google's Page Rank algorithm. We verify that our replication is aligned with the paper's by using the data from the paper and checking that our results match the paper's results. Table 1 shows the results of the paper, and Table 2 shows our own results. Since the results are identical, we believe that our page rank algorithm matches the paper's.
 
 ![Figure 1](/figures/paperResult.png "Figure 1")
 Table 1: Results from *Google’s PageRank: The Math Behind the Search Engine*
