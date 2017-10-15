@@ -15,6 +15,14 @@ In order to determine whether PageRank would accurately calculate the websites t
 ## Determining Highest Rank
 Since we verified that the page rank algorithm worked, we calculated the page rank of collaboration network in order to determine which websites in the network had the highest probability of being chosen, and thus which ones would show up earlier in a google search. The third shows the graph of the collaboration network comparing the betweenness and the page rank probability. Unlike the other two figures, there is a smaller correlation between the probability output from page rank and the betweenness centrality. We have determined that this is most likely caused by a variety of nodes in the network that have a large range of edges but do not act as a central hub, diminishing their betweenness centrality while increasing their page rank. The PageRank algorithm is able to account for the nodes with many edges that are not part of the shortest path for many nodes. 
 
+| Word  | PageRank  | Word Count  | 
+|---|---|---|
+|  Mathmatics |  Georg Cantor, Algebra, E.P. Wigner |  Mathematics, Applied Mathematics, David Hilbert |
+|  Marx | Marxism, Anarchism, Sociology  |  Karl Marx, Marxism, Communism |
+|  Hinduism |  History of Buddhism, United Kingdom, Max Weber |  Hinduism, Religion, Indonesia |
+|  Atheirm |  Atheism, Deity, Eliminative materialism |  Atheism, Thomas Hobbes, Humanism |
+
+
 
 ![Figure 3](/figures/CollaborationNetwork.png "Figure 3")
 
