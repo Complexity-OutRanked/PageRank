@@ -25,7 +25,7 @@ Mathematically, centrality is defined as
 
 <img src="/figures/BetweennessEquation.png" width="300" height="100" />
 
-where ![sigma_st](/figures/sigma_st.png "sigma st") is the total number of shortest paths from node s to node t and ![sigma_st](/figures/sigma_st(v).png "sigma st") is the number of those paths that pass through v.
+where <img src="/figures/sigma_st.png" width="12" height="12" /> is the total number of shortest paths from node s to node t and <img src="/figures/sigma_st(v).png" width="12" height="12" /> is the number of those paths that pass through v.
 
 For the experiments, we assume that if there is a high correlation between the betweenness value and the PageRank probability of each node, we would conclude that the algorithm worked accurately to evaluate each node. Figure 1 and 2 shows the correlation between betweenness value and the PageRank probability on Barabási–Albert graph and Erdős–Rényi graph, respectively. 
 
