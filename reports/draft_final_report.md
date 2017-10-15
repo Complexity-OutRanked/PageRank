@@ -3,6 +3,9 @@ Katya Donovan and Young Seok Kim
 ## Abstract
 In Page and Brin's paper *The PageRank Citation Ranking: Bringing Order to the Web*, the two Stanford researchers design a method which matches web pages objectively to determine a web user's interest in a website. The method ranks the websites based on the number of back links and links that the website has. We compared the PageRank algorithm with a method that determines the betweenness centrality, or the importance of nodes based on the shortest paths between different nodes. We used Brandes' optimized algorithim as described in *A Faster Algorithm for Betweenness Centrality* to verify that page rank was a good factor to add to the google search algorithm, by examining if there was high correlation between the probability distribution of page rank and the betweenness centrality of the nodes. Once we checked PageRank, we implemented it on a collaboration network to compare each node's betweenness centrality. 
 
+## PageRank
+PageRank is an algorithm developed by Sergey Brin and Larry Page that is  used by early Google Search to rank websites in their search engine results. Unlike other algorithms in that time, it doesn’t use any content information other than the links. It uses the link information to construct a graph of websites, and determine the probability distribution representing how likely that a person will land on each webpage.
+
 ## Verifying PageRank
 Following *Google’s PageRank: The Math Behind the Search Engine*, we implement Google's Page Rank algorithm. We verify that our replication is aligned with the paper's and using the data from the paper, check that our results match the paper's results. Table 1 shows the results of the paper, and Table 2 shows our own results. Since the results are very similar, we believe that our page rank algorithm matches the paper's.
 
@@ -11,9 +14,15 @@ Table 1: Results from *Google’s PageRank: The Math Behind the Search Engine*
 ![Figure 1](/figures/ourResult.png "Figure 1")
 Table 2: Results from our own implementation
 
-In order to determine whether PageRank would accurately calculate the websites that the viewer is most interested in, we compare it against a metric for determining the centrality of nodes in a graph based on shortest path lengths, known as *betweenness centrality*. 
+One of the challenges of experimentation with PageRank is how to measure the soundness of PageRank system. With the probability distribution as an output, it is hard to evaluate the output result, since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted, and we wanted to extend our project to further evaluate the PageRank model. 
 
-INSERT SECTION ABOUT BETWEENNESS
+In order to evaluate the probability values of the nodes, we researched over the measures of importance of nodes in a graph, and we concluded that betweenness centrality or *betweenness* would be a good measure to evaluate the *importance* of nodes. Formally, betweenness is defined as follows,
+> **Betweenness** centrality quantifies the number of times a node acts as a bridge along the shortest path between two other nodes.
+Mathematically, centrality is defined as
+[image:1B10D897-33D0-402F-8C0D-FE47F6A6B0AB-48349-000082288B4C0F22/Screen Shot 2017-10-15 at 10.49.01 AM.png]
+where $\sigma_st$ is total number of shortest paths from node s to node t and $\sigma_st(v)$ is the number of those paths that pass through v.
+
+For the experiments, we assumed that if there is a high correlation between the betweenness value and the PageRank probability of each node, we would conclude that the algorithm worked accurately to evaluate each node. Figure 1 and 2 shows the correlation between betweenness value and the PageRank probability on BA graph and ER graph, respectively. Also Figure 3 shows the correlation for *Wikispeedia navigation paths* graph from SNAP. “Wikispeedia” dataset is a search path where users are asked to navigate from a given source article to a target article, by only clicking Wikipedia links. We thought this task is relevant because it involves search through links. 
 
 If there was a high correlation between the page rank probability distribution of a node and the betweenness centrality of the same node, we assume that the page rank algorithm is an accurate way of determining which websites are most popular. Figure 1 depicts each node with its corresponding page rank probability and betweeness centrality for a Barabasi-Albert graph. A Barabasi-Albert has central nodes with many edges, so we expect to see a correlation between the two over a large range of values. As shown in Figure 1, there is a high correlation between the page rank probability of each node and the betweenness centrality. As expected, there are less nodes that have a high page rank and betweenness centrality value than nodes that have a low page rank, because Barabasi-Albert graphs have few central nodes. Figure 2 depicts the probability based on the page rank algorithm against the betweenness centrality for an Erdos-Renyi model, which also has a strong correlation. Since an Erdos-Renyi model is a random graph, the correlation would follow a normal distribution, with many nodes having an average betweenness and page rank probability and a few having a low and high page rank probability and betweenness. Since there is a strong correlation between page rank probability and centrality, we believe that 
 
