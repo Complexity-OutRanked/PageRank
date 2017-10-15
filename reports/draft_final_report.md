@@ -16,7 +16,7 @@ Following *Google’s PageRank: The Math Behind the Search Engine*, we implement
 
 <p style="text-align: center;">Table 2: Results from our own implementation </p>
 
-One of the challenges of experimentation with PageRank is how to measure the accuracy of PageRank system. With the probability distribution as an output, it is hard to evaluate the output result since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted. We extend our project to further evaluate the PageRank model by comparing PageRank to betweenness centrality in order to evaluate the probability values of the nodes. 
+One of the challenges of experimentation with PageRank is determining how to measure the accuracy of PageRank system. With the probability distribution as an output, it is hard to evaluate the output result since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted. We extend our project to further evaluate the PageRank model by comparing PageRank to betweenness centrality in order to evaluate the probability values of the nodes. 
 
 Betweenness centrality or *betweenness* is a good measure to evaluate the *importance* of nodes. Formally, betweenness is defined as follows,
 > **Betweenness** centrality quantifies the number of times a node acts as a bridge along the shortest path between two other nodes.
