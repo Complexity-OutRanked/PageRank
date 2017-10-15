@@ -18,6 +18,7 @@ One of the challenges of experimentation with PageRank is how to measure the sou
 
 In order to evaluate the probability values of the nodes, we researched over the measures of importance of nodes in a graph, and we concluded that betweenness centrality or *betweenness* would be a good measure to evaluate the *importance* of nodes. Formally, betweenness is defined as follows,
 > **Betweenness** centrality quantifies the number of times a node acts as a bridge along the shortest path between two other nodes.
+
 Mathematically, centrality is defined as
 [image:1B10D897-33D0-402F-8C0D-FE47F6A6B0AB-48349-000082288B4C0F22/Screen Shot 2017-10-15 at 10.49.01 AM.png]
 where $\sigma_st$ is total number of shortest paths from node s to node t and $\sigma_st(v)$ is the number of those paths that pass through v.
