@@ -14,7 +14,7 @@ Following *Google’s PageRank: The Math Behind the Search Engine*, we implement
 ###### Table 1 : Results from *Google’s PageRank: The Math Behind the Search Engine*
 
 ![Table 2](/figures/ourResult.png "Table 2")
-###### Table 2 : Results from our own implementation
+###### Table 2 : Results from our [own implementation](https://github.com/Complexity-OutRanked/PageRank/blob/master/code/PageRank.ipynb)
 
 ## Evaluating PageRank
 One of the challenges of experimentation with PageRank is determining how to measure the accuracy of PageRank system. With the probability distribution as an output, it is hard to evaluate the output result since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted. We extend our project to further evaluate the PageRank model by comparing PageRank to betweenness centrality in order to evaluate the probability values of the nodes. 
