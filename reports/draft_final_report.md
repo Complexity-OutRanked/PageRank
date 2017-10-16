@@ -16,6 +16,7 @@ Following *Google’s PageRank: The Math Behind the Search Engine*, we implement
 ![Table 2](/figures/ourResult.png "Table 2")
 ###### Table 2 : Results from our own implementation
 
+# Evaluating PageRank
 One of the challenges of experimentation with PageRank is determining how to measure the accuracy of PageRank system. With the probability distribution as an output, it is hard to evaluate the output result since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted. We extend our project to further evaluate the PageRank model by comparing PageRank to betweenness centrality in order to evaluate the probability values of the nodes. 
 
 Betweenness centrality or *betweenness* is a good measure to evaluate the *importance* of nodes. Formally, betweenness is defined as follows,
@@ -38,7 +39,7 @@ A Barabasi-Albert has central nodes with many edges, so we expect to see a corre
 ![Figure 2](/figures/ER1000.png "Figure 2")
 ###### Figure 2: Comparing PageRank and Betweenness Centrality for ER graph with 1000 nodes and p=0.3
 
-## Determining Highest Rank
+## Evaluating with real world dataset
 
 Figure 3 shows the correlation for *Wikispeedia navigation paths* graph from SNAP. “Wikispeedia” dataset is a search path where users are asked to navigate from a given source article to a target article, by only clicking Wikipedia links. We thought this task is relevant because it involves search through links. 
 
