@@ -61,35 +61,30 @@ One of the reasons that the PageRank algorithm might not work well in this scena
 ## Bibliography
 
 #### Bibliography 1
-[The PageRank Citation Ranking: Bringing Order to the Web]
 
 Page, Lawrence and Brin, Sergey and Motwani, Rajeev and Winograd, Terry (1999) The PageRank Citation Ranking: Bringing Order to the Web. Technical Report. Stanford InfoLab.
 
 Page and Brin design a method known as PageRank, which matches web pages objectively in order to calculate a person's interest in them. By modeling each of the website's as nodes and using links as edges, they created an algorithm that determines the rank of website based on how many websites link to them, taking the popularity of the websites that link to them into consideration. Page and Brin tested their model by comparing the predictions for future citation counts on the Stanford web against the citation counts and found that Pagerank was a better predictor.
 
 #### Bibliography 2
-[The Google Pagerank Algorithm and How It Works]
 
 Rogers, I. (2005, May 7). The Google Pagerank Algorithm and How it Works. Retrieved October 1, 2017, from http://www.alvit.de/vf/en/web-development-the-google-pagerank-algorithm-and-how-it-works.html
 
 Rogers explains the Google PageRank algorithm by simulating how PageRank is determined using small systems. PageRank determines how important a page is by using how many links from other pages go to the page, and how many links it gives to other websites. Although Rogers did not design his own model, he used a previous algorithm on a smaller network in order to better explain page rank.
 
 #### Bibliography 3
-[Google’s PageRank: The Math Behind the Search Engine]
 
 Wills, R. (2006, May 1). *Google's PageRank: The math behind the search engine.* Raleigh, NC
 
 This paper reviews mathematics behind the PageRank algorithm. The paper introduces some backgrounds on the Google’s search engine first, and explains details on the mathematics behind the PageRank. It also points out a *dangling node* problem and suggests a potential fix for the problem. After that, it also introduces a *personalization vector* and talks about the algorithm which computes the PageRank score. Overall, this paper concisely defines the mathematical problem for the PageRank, and gives us simple explanation over some of the details in the PageRank. I think this paper will be very useful to design the experiments.
 
 #### Bibliography 4
-[Deeper Inside PageRank]
 
 Langville, A.M. and Meyer, C.D. (2004, October 20). *Deeper inside PageRank.* Intenet Math.
 
 This paper talks about further details on PageRank algorithm. The first two sections talk about the background on PageRank, and the third section explains the general concept of the algorithm. Then, in section 4, it introduces storage issues on PageRank algorithm and explains different approaches on how to resolve the storage issue. In section 5, the paper gives detailed mathematics on solving the PageRank problem. After that, it gives some intuitions about the alpha value and personalization vector and etc… Overall, this paper goes quite deep into the algorithm and gives more perspective on the PageRank algorithm.
 
 #### Bibliography 5
-[A Faster Algorithm for Betweenness Centrality]
 
 Brandes, U. (2001). *A Faster algorithm for betweenness centrality.* Journal of Mathematical Sociology. 25. 163-177.
 
