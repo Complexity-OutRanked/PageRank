@@ -16,9 +16,10 @@ Following *Google’s PageRank: The Math Behind the Search Engine*, we implement
 ![Table 2](/figures/ourResult.png "Table 2")
 ###### Table 2 : Results from our own implementation
 
-# Evaluating PageRank
+## Evaluating PageRank
 One of the challenges of experimentation with PageRank is determining how to measure the accuracy of PageRank system. With the probability distribution as an output, it is hard to evaluate the output result since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted. We extend our project to further evaluate the PageRank model by comparing PageRank to betweenness centrality in order to evaluate the probability values of the nodes. 
 
+### Betweenness centrality
 Betweenness centrality or *betweenness* is a good measure to evaluate the *importance* of nodes. Formally, betweenness is defined as follows,
 > **Betweenness** centrality quantifies the number of times a node acts as a bridge along the shortest path between two other nodes.
 
@@ -28,6 +29,7 @@ Mathematically, centrality is defined as
 
 where <img src="/figures/sigma_st.png" width="40" height="20" /> is the total number of shortest paths from node s to node t and <img src="/figures/sigma_st(v).png" width="50" height="20" /> is the number of those paths that pass through v.
 
+### Evaluating with synthetic random graph
 For the experiments, we assume that if there is a high correlation between the betweenness value and the PageRank probability of each node, we would conclude that the algorithm worked accurately to evaluate each node. Figure 1 and 2 shows the correlation between betweenness value and the PageRank probability on Barabási–Albert graph and Erdős–Rényi graph, respectively. 
 
 A Barabasi-Albert has central nodes with many edges, so we expect to see a correlation between the two over a large range of values. As shown in Figure 1, there is a high correlation between the page rank probability of each node and the betweenness centrality. As expected, there are less nodes that have a high page rank and betweenness centrality value than nodes that have a low page rank, because Barabasi-Albert graphs have few central nodes. Figure 2 depicts the probability based on the page rank algorithm against the betweenness centrality for an Erdos-Renyi model, which also has a strong correlation. Since an Erdos-Renyi model is a random graph, the correlation would follow a normal distribution, with many nodes having an average betweenness and page rank probability and a few having a low and high page rank probability and betweenness. Since there is a strong correlation between page rank probability and centrality, we believe that 
@@ -39,7 +41,7 @@ A Barabasi-Albert has central nodes with many edges, so we expect to see a corre
 ![Figure 2](/figures/ER1000.png "Figure 2")
 ###### Figure 2: Comparing PageRank and Betweenness Centrality for ER graph with 1000 nodes and p=0.3
 
-## Evaluating with real world dataset
+### Evaluating with real world dataset
 
 Figure 3 shows the correlation for *Wikispeedia navigation paths* graph from SNAP. “Wikispeedia” dataset is a search path where users are asked to navigate from a given source article to a target article, by only clicking Wikipedia links. We thought this task is relevant because it involves search through links. 
 
