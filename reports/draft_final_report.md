@@ -41,6 +41,14 @@ PageRank is an effective metric of determining the importance of nodes.
 ![Figure 2](/figures/ER1000.png "Figure 2")
 ###### Figure 2: Comparing PageRank and Betweenness Centrality for ER graph with 1000 nodes and p=0.3
 
+### Evaluating with real world dataset
+ 
+Figure 3 shows the correlation for *Wikispeedia navigation paths* graph from SNAP. “Wikispeedia” dataset is a search path where users are asked to navigate from a given source article to a target article, by only clicking Wikipedia links. We thought this task is relevant because it gives the data of pages that are linked to each other. 
+ 
+![Figure 3](/figures/Wikispeedia.png "Figure 3")
+###### Figure 3: Comparing PageRank and Betweenness Centrality for Wikispeedia dataset
+ 
+ 
 ## Comparing Search Engines
 Although search engine algorithms are much more complex now, in the beginning the most basic search algorithms matched up a user's web search with pages with the highest word frequency. JumpStation, an early search engine algorithm, indexed through the website titles and listed the web pages with the most common words. On a smaller scale, we compare our word frequency algorithm with or without the PageRank algorithm. Our implementation of the word frequency algorithm consists of finding the hundred top articles from our database with the highest count of the searched word. We create a new graph with only these websites and use Page Rank to determine the top ten web pages. We compare the results from the word frequency algorithm with and without the PageRank algorithm in Table 3. Table 3 shows the top three Wikipedia pages for each algorithm.
 
