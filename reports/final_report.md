@@ -43,8 +43,8 @@ PageRank is an effective metric of determining the importance of nodes.
 
 ### Evaluating with real world dataset
  
-Figure 3 shows the correlation for *Wikispeedia navigation paths* graph from SNAP. “Wikispeedia” dataset is a search path where users are asked to navigate from a given source article to a target article, by only clicking Wikipedia links. We thought this task is relevant because it gives the data of pages that are linked to each other. 
- 
+Figure 3 shows the correlation for *Wikispeedia navigation paths* graph from SNAP. “Wikispeedia” dataset is a search path where users are asked to navigate from a given source article to a target article, by only clicking Wikipedia links. We thought this task is relevant because it gives the data of pages that are linked to each other.  The correlation between the PageRank probability distribution and the betweenness of the nodes is fairly linear, with one node that has a extremely high PageRank and betweenness centrality. One reason for the large difference between this outlier and the rest of the nodes is due to how the data was taken. Since the data only considers the links that are in the current data set as edges, it neglects many of the edges that certain nodes may have, especially nodes that were collected as the last item in the depth-breath search. Because the data does not consider all of the edges that a node can have, this explains why there might be such a large gap in the correlation of betweenness centrality and PageRank probability.
+
 ![Figure 3](/figures/Wikispeedia.png "Figure 3")
 ###### Figure 3: Comparing PageRank and Betweenness Centrality for Wikispeedia dataset
  
