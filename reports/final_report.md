@@ -1,13 +1,29 @@
 # Determining whether Google really does have the best search engine algorithm
 Katya Donovan and Young Seok Kim
 ## Abstract
-In Page and Brin's paper, *The PageRank Citation Ranking: Bringing Order to the Web*, the two then Stanford researchers design a method which matches web pages objectively to determine a web user's interest in a website. The method ranks the websites based on the number of back links and links that the website has. We compare the PageRank algorithm with a method that determines the betweenness centrality, or the importance of nodes based on the shortest paths between different nodes. We use Brandes' optimized algorithim as described in *A Faster Algorithm for Betweenness Centrality* to verify that PageRank is a good factor to add to the Google search algorithm, by examining if there is high correlation between the probability distribution of page rank and the betweenness centrality of the nodes. We also compare the PageRank algorithm to a word frequency algorithm, mimicking earlier search algorithms in order to determine which one produces better results.
+In Page and Brin's paper [1], the two then Stanford researchers create PageRank, an algorithm which orders web pages objectively to determine a web user's interest in a website. 
+Using the number of links to and from the website, PageRank determines the popularity of each website and in turn orders them accordingly.
+We verify the PageRank algorithm with a method that determines the betweenness centrality, or the importance of nodes based on the shortest paths between different nodes. 
+Using Brandes' optimized algorithim as described in [5], we examine if there is a high correlation between the probability distribution of PageRank and the betweenness centrality of the nodes, which indicates that PageRank is able to order websites based on importance.
+We compare the PageRank algorithm to a word frequency algorithm that mimicks earlier search algorithms, in order to analyze the correlation of results and the search terms for both algorithms.
 
 ## PageRank
-PageRank is an algorithm developed by Sergey Brin and Larry Page that is used by early Google Search to rank websites in their search engine results. Unlike other algorithms at that time, it does not use any content information other than the links. It uses the link information to construct a graph of websites, and determines the probability distribution of a user landing on each webpage.
+PageRank is an algorithm developed by Sergey Brin and Larry Page implemented by early Google Search to order websites based on their relevance to the search terms. 
+Unlike other algorithms at that time, PageRank does not use any content information other than the links to and from the website.
+Using the link information, PageRank constructs a graph of websites and determines the probability distribution of a user landing on each webpage.
+The websites with the highest probability have the highest rank.
 
 ## Replicating PageRank
-Following *Google’s PageRank: The Math Behind the Search Engine*, we implement Google's PageRank algorithm. We verify that our replication is aligned with the paper's by using the data from the paper and checking that our results match the paper's results. Table 1 shows the results of the paper, and Table 2 shows our own results. Since the results are identical, we believe that our page rank algorithm matches the paper's.
+Following [3], we implement Google's PageRank algorithm. We verify that our replication is aligned with the paper's by using the data from the paper and checking that our results match the paper's results. Table 1 shows the results of the paper, and Table 2 shows our own results. Since the results are identical, we believe that our page rank algorithm matches the paper's.
+
+| Damping Factor | Personalization Vector  | PageRank Vector (Paper result) |  PageRank Vector (Our result) | Ordering of Nodes |
+|---|---|---|---|---|
+| 0.85 | (0.25, 0.25, 0.25, 0.25) | (0.21, 0.26, 0.31, 0.21) | (0.21, 0.26, 0.31, 0.21) | (3, 2, 1, 3) |
+| 0.85 | (1, 0, 0, 0) | (0.30, 0.28, 0.27, 0.15) | (0.30, 0.28, 0.27, 0.15) | (1, 2, 3, 4) |
+| 0.95 | (0.25, 0.25, 0.25, 0.25) | (0.21, 0.26, 0.31, 0.21) | (0.21, 0.26, 0.31, 0.21) | (3, 2, 1, 3) |
+| 0.95 | (1, 0, 0, 0) | (0.24, 0.27, 0.30, 0.19) | (0.24, 0.27, 0.30, 0.19) | (3, 2, 1, 4) |
+
+
 
 ![Table 1](/figures/paperResult.png "Table 1")
 ###### Table 1 : Results from *Google’s PageRank: The Math Behind the Search Engine*
