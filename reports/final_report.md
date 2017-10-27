@@ -32,7 +32,7 @@ As shown in the table below, our implementation matches the paper's implemenatio
 
 
 ## Evaluating PageRank
-One of the challenges of experimentation with PageRank is defining the accuracy of PageRank since evaluation of search results are inherently subjective.
+One of the challenges of experimentation with PageRank is defining the accuracy of PageRank because the evaluation of search results are inherently subjective.
 In the original paper, the assessment of the PageRank algorithm is omitted. We extend our project to evaluate the PageRank model by comparing the PageRank probabilities to betweenness centrality for each node.
 
 ### Betweenness centrality
