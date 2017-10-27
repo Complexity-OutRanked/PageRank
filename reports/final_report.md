@@ -8,7 +8,7 @@ Using Brandes' optimized algorithim as described in [5], we examine if there is 
 We compare the PageRank algorithm to a word frequency algorithm that mimicks earlier search algorithms, in order to analyze the correlation of results and the search terms for both algorithms.
 
 ## PageRank
-PageRank is an algorithm developed by Sergey Brin and Larry Page implemented by early Google Search to order websites based on their relevance to the search terms. 
+PageRank is an algorithm developed by Sergey Brin and Larry Page that is implemented in early Google Search to order websites based on their relevance to the search terms. 
 Unlike other algorithms at that time, PageRank does not use any content information other than the links to and from the website.
 Using the link information, PageRank constructs a graph of websites and determines the probability distribution of a user landing on each webpage.
 The websites with the highest probability have the highest rank.
