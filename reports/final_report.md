@@ -18,7 +18,7 @@ Following [3], we implement Google's PageRank algorithm. We verify that our repl
 The damping factor accounts for the probability that a user exits a page and enters another page without using a link.
 The personalization vector is a probability distribution vector that models the user's preference.
 The PageRank vector is calculated by the previous factors and is the probability distribution vector that a user lands on each page.
-As shown in the table below, our implementation matches the paper's implemenation which validates our implementation.
+As shown in the table below, our implementation matches the paper's implemenation.
 
 | Damping Factor | Personalization Vector  | PageRank Vector (Paper result) |  PageRank Vector (Our result) | Ordering of Nodes |
 |---|---|---|---|---|
