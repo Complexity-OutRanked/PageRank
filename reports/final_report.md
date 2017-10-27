@@ -14,7 +14,11 @@ Using the link information, PageRank constructs a graph of websites and determin
 The websites with the highest probability have the highest rank.
 
 ## Replicating PageRank
-Following [3], we implement Google's PageRank algorithm. We verify that our replication is aligned with the paper's by using the data from the paper and checking that our results match the paper's results. Table 1 shows the results of the paper, and Table 2 shows our own results. Since the results are identical, we believe that our page rank algorithm matches the paper's.
+Following [3], we implement Google's PageRank algorithm. We verify that our replication is aligned with the paper's by using the data from the paper's. Table 1 shows the results of the paper and our own implementation. 
+The damping factor accounts for the probability that a user exits a page and enters another page without using a link.
+The personalization vector is a probability distribution vector that models the user's preference.
+The PageRank vector is also a probability distribution vector that a user lands on each page.
+As shown in the table below, our implementation matches the paper's implemenation.
 
 | Damping Factor | Personalization Vector  | PageRank Vector (Paper result) |  PageRank Vector (Our result) | Ordering of Nodes |
 |---|---|---|---|---|
@@ -23,13 +27,9 @@ Following [3], we implement Google's PageRank algorithm. We verify that our repl
 | 0.95 | (0.25, 0.25, 0.25, 0.25) | (0.21, 0.26, 0.31, 0.21) | (0.21, 0.26, 0.31, 0.21) | (3, 2, 1, 3) |
 | 0.95 | (1, 0, 0, 0) | (0.24, 0.27, 0.30, 0.19) | (0.24, 0.27, 0.30, 0.19) | (3, 2, 1, 4) |
 
+###### Table 1 : Results from *Google’s PageRank: The Math Behind the Search Engine* and our [own implementation](https://github.com/Complexity-OutRanked/PageRank/blob/master/code/PageRank.ipynb)
 
 
-![Table 1](/figures/paperResult.png "Table 1")
-###### Table 1 : Results from *Google’s PageRank: The Math Behind the Search Engine*
-
-![Table 2](/figures/ourResult.png "Table 2")
-###### Table 2 : Results from our [own implementation](https://github.com/Complexity-OutRanked/PageRank/blob/master/code/PageRank.ipynb)
 
 ## Evaluating PageRank
 One of the challenges of experimentation with PageRank is determining how to measure the accuracy of the PageRank system. With the probability distribution as an output, it is hard to evaluate the output result since searches are inherently subjective. Even in the original paper, the evaluation of the PageRank algorithm is omitted. We extend our project to further evaluate the PageRank model by comparing PageRank to betweenness centrality in order to evaluate the probability values of the nodes. 
@@ -66,7 +66,7 @@ Figure 3 shows the correlation for *Wikispeedia navigation paths* graph from SNA
  
  
 ## Comparing Search Engines
-Although search engine algorithms are much more complex now, in the beginning the most basic search algorithms matched up a user's web search with pages with the highest word frequency. JumpStation, an early search engine algorithm, indexed through the website titles and listed the web pages with the most common words. On a smaller scale, we compare our word frequency algorithm with or without the PageRank algorithm. Our implementation of the word frequency algorithm consists of finding the hundred top articles from our database with the highest count of the searched word. We create a new graph with only these websites and use Page Rank to determine the top ten web pages. We compare the results from the word frequency algorithm with and without the PageRank algorithm in Table 3. Table 3 shows the top three Wikipedia pages for each algorithm.
+Although search engine algorithms are much more complex now, in the beginning the most basic search algorithms matched up a user's web search with pages with the highest word frequency. JumpStation, an early search engine algorithm, indexed through the website titles and listed the web pages with the most common words. On a smaller scale, we compare our word frequency algorithm with or without the PageRank algorithm. Our implementation of the word frequency algorithm consists of finding the hundred top articles from our database with the highest count of the searched word. We create a new graph with only these websites and use Page Rank to determine the top ten web pages. We compare the results from the word frequency algorithm with and without the PageRank algorithm in Table 2. Table 2 shows the top three Wikipedia pages for each algorithm.
 
 
 | Word  | PageRank  | Word Count  | 
@@ -76,9 +76,9 @@ Although search engine algorithms are much more complex now, in the beginning th
 |  Hinduism |  History of Buddhism, United Kingdom, Max Weber |  Hinduism, Religion, Indonesia |
 |  Atheirm |  Atheism, Deity, Eliminative materialism |  Atheism, Thomas Hobbes, Humanism |
 
-###### Table 3: Comparing Page Rank and Word Frequency Algorithms
+###### Table 2: Comparing Page Rank and Word Frequency Algorithms
 
-Table 3 shows that the different algorithms will produce different results, but determining which one is more accurate is difficult, because it is subjective to the user Additonally, the data is a subset of the wikipedia data and only one word was inputted for the web search, making the model less representative of the actual process. For most words, the word frequency algorithm without PageRank will rank the Wikipedia page of that searched word as the top page. However, the PageRank algorithm ranks Wikipedia pages that a user might be interested in, even if the searched word is not exactly the same. 
+Table 2 shows that the different algorithms will produce different results, but determining which one is more accurate is difficult, because it is subjective to the user Additonally, the data is a subset of the wikipedia data and only one word was inputted for the web search, making the model less representative of the actual process. For most words, the word frequency algorithm without PageRank will rank the Wikipedia page of that searched word as the top page. However, the PageRank algorithm ranks Wikipedia pages that a user might be interested in, even if the searched word is not exactly the same. 
 
 One of the reasons that the PageRank algorithm might not work well in this scenario is because of the dataset. Wikipedia is very structured, having webpages dedicated to simply one word, which is why the word frequency algorithm would work very well. Additionally, all of Wikipedia will have reliable information, since it is all part of the same larger web page. For the world wide web as a whole, PageRank will most likely produce more accurate results because it can rank pages based on their popularity, which word frequency neglects. Additionally, most web pages are not centered around a certain word, but rather around a certain topic or idea, which makes word frequency more difficult. However, based on our results, we conclude that for a small portion of Wikipedia, a search result with only the word for the desire Wikipedia page is better than the PageRank algorithm combined with the word frequency algorithm.
  
